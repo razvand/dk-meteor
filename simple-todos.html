@@ -8,6 +8,13 @@
             <h1>Todo List</h1>
             <form class="new-task">
                 <input type="text" name="text" placeholder="Type to add new tasks" />
+                <select name="color">
+                    <option value="black" selected="selected" style="color:black">black</option>
+                    <option value="red" style="color:red">red</option>
+                    <option value="orange" style="color:orange">orange</option>
+                    <option value="yellow" style="color:yellow">yellow</option>
+                    <option value="green" style="color:green">green</option>
+                </select>
             </form>
         </header>
         <ul>
@@ -22,6 +29,6 @@
     <li class="{{#if checked}}checked{{/if}}">
         <button class="delete">&times;</button>
         <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-        <span class="text">{{text}}</span>
+        <span class="text" style="color:{{color}}">{{text}}</span>
     </li>
 </template>

@@ -9,13 +9,16 @@ if (Meteor.isClient) {
     Template.body.events({
         "submit .new-task": function (event) {
             var text = event.target.text.value;
+            var color = event.target.color.value;
 
             Tasks.insert({
                 text: text,
+                color: color,
                 createdAt: new Date()
             });
 
             event.target.text.value = "";
+            event.target.color.value = "black";
             return false;
         }
     });
